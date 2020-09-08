@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asynchronous JavaScript</title>
+</head>
+
+<body>
+    <h1>Confluence JavaScript</h1>
+    <script>
+        /*test fetch for weather forecast
+                                                                                                                                                                                
+                                                                                                                                                                                        fetch('http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json')
+
+                                                                                                                                                                                        .then(result => {
+                                                                                                                                                                                            console.log(result);
+                                                                                                                                                                                            return result.json();
+                                                                                                                                                                                        })
+
+                                                                                                                                                                                        .then(data => {
+                                                                                                                                                                                            console.log(data);
+                                                                                                                                                                                            const today = data.dataseries[0]
+                                                                                                                                                                                            console.log(`The cloudcover is ${today.cloudcover} and the temperature is ${today.temp2m}`);
+
+                                                                                                                                                                                        })
+
+                                                                                                                                                                                        .catch(error => {
+                                                                                                                                                                                            console.log(error);
+
+                                                                                                                                                                                        });
+                                                                                                                                                                                */
+        /*headers = {
+            username = 'sarah.cashin@raytheon.co.uk'
+            password = 'a6tWtHkQRGvtcxc4Iy3a354E'
+        }
+*/
+
+        /*AP.request('https://communities.atlassian.net/wiki/rest/atlassian/latest/https/{62881810}/history', {
+            success: function(responseText) {
+                alert(responseText);
+            } 
+        });
+        */
+
+        fetch('https://communities.atlassian.net/wiki/rest/api/content/{62881810}/history') //Tech Tues history
+            .then(result => {
+                console.log(result);
+                return result.json();
+            })
+
+        .then(data => {
+            console.log(data);
+
+        })
+
+        .catch(error => {
+            console.log(error);
+
+        });
+    </script>
+</body>
+
+</html>
